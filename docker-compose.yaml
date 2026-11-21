@@ -1,0 +1,60 @@
+name: ssp
+
+services:
+    client:
+        image: ghcr.io/artkiselev704/ssp-client
+        restart: always
+        environment:
+          - TZ=Europe/Moscow
+        volumes:
+          - ./config.client.json:/app/config.json
+        ports:
+          - "2080:2080"
+
+    server:
+        image: ghcr.io/artkiselev704/ssp-server
+        restart: always
+        environment:
+          - TZ=Europe/Moscow
+        volumes:
+          - ./config.server.json:/app/config.json
+
+    mirror1:
+        image: ghcr.io/artkiselev704/ssp-mirror
+        restart: always
+        environment:
+          - TZ=Europe/Moscow
+        volumes:
+          - ./config.mirror.json:/app/config.json
+        
+    mirror2:
+        image: ghcr.io/artkiselev704/ssp-mirror
+        restart: always
+        environment:
+          - TZ=Europe/Moscow
+        volumes:
+          - ./config.mirror.json:/app/config.json
+    
+    mirror3:
+        image: ghcr.io/artkiselev704/ssp-mirror
+        restart: always
+        environment:
+          - TZ=Europe/Moscow
+        volumes:
+          - ./config.mirror.json:/app/config.json
+
+    test-sequence:
+        image: ghcr.io/artkiselev704/ssp-test-sequence
+        restart: always
+        environment:
+          - TZ=Europe/Moscow
+        ports:
+          - "8081:8080"
+
+    test-128mb:
+        image: ghcr.io/artkiselev704/ssp-test-128mb
+        restart: always
+        environment:
+          - TZ=Europe/Moscow
+        ports:
+          - "8082:8080"
