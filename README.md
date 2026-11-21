@@ -37,7 +37,7 @@ flowchart LR
 
 ## 1. What is STCP?
 
-**STCP (Seamless TCP)** - a custom transport-level framing and recovery protocol running over TCP. It adds session identification, sequence tracking, and acknowledgements so a logical session can survive underlying TCP disconnects.
+**STCP (Seamless TCP)** - a custom framing and recovery protocol running over TCP. It adds session identification, sequence tracking, and acknowledgements so a logical session can survive underlying TCP disconnects.
 
 | Operation | Code | Fields | Reply |
 | --- | --- | --- | --- |
